@@ -113,8 +113,6 @@ function Authentication(){
               style={{ padding: "10px", borderRadius: "10px" }}
             />
             <h5 style={{ color: "red" }}>{message}</h5>
-          </span>
-          <span className="login-box">
             <input
               type="password"
               placeholder="Enter Your password"
@@ -123,32 +121,38 @@ function Authentication(){
               onChange={handlePasswordChange}
             />
             <h5 style={{ color: "red" }}>{password}</h5>
-            {passwordInputRef !== "" ? <PasswordChecklist
-              value={passwordInputRef}
-              rules={[
-                "minLength",
-                "lowercase",
-                "specialChar",
-                "number",
-                "capital",
-              ]}
-              minLength={8}
-            />: ""}
+            {passwordInputRef !== "" ? (
+              <PasswordChecklist
+                value={passwordInputRef}
+                rules={[
+                  "minLength",
+                  "lowercase",
+                  "specialChar",
+                  "number",
+                  "capital",
+                ]}
+                minLength={8}
+              />
+            ) : (
+              ""
+            )}
             <h5 style={{ color: "red" }}>{status}</h5>
           </span>
-          <button
-            onClick={signUpForm}
-            style={{ padding: "10px", borderRadius: "10px" }}
-          >
-            Sign-up
-          </button>
-          <button
-            onClick={logInForm}
-            style={{ padding: "10px", borderRadius: "10px" }}
-          >
-            Login
-          </button>
-          <h5 style={{ color: "red" }}>{error}</h5>
+          <div className='main-buttons'>
+            <button
+              onClick={signUpForm}
+              style={{ padding: "10px", borderRadius: "10px" }}
+            >
+              Sign-up
+            </button>
+            <button
+              onClick={logInForm}
+              style={{ padding: "10px", borderRadius: "10px" }}
+            >
+              Login
+            </button>
+            <h5 style={{ color: "red" }}>{error}</h5>
+          </div>
         </div>
       </div>
     );
