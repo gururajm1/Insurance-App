@@ -11,7 +11,7 @@ function Auth() {
 
     useEffect(() => {
       if (localStorage.getItem("auth")) {
-        navigate("/dashboard");
+        navigate("/dash");
       }
     }, []);
 
@@ -22,6 +22,8 @@ function Auth() {
     const [validP, setValidP] = useState(false);
     const [status, setStatus] = useState("");
     const emailInputRef = useRef();
+    const userName = useRef("");
+    const userAge = useRef(0);
     //const passwordInputRef = useRef();
     const [passwordInputRef, setpasswordInputRef] = useState("");
 
@@ -56,7 +58,7 @@ function Auth() {
         if (email !== null && password !== "") {
           window.localStorage.setItem(
             "login",
-            JSON.stringify({ email, hashedpassword })
+            JSON.stringify({ userName, userAge, email, hashedpassword })
           );
           setError("Account Created Successfuylly now try Login")
           //console.log(hashedpassword);
@@ -107,7 +109,7 @@ function Auth() {
                 setPassword("");
                 console.log("Email & Password Matched :)");
                 setLoggedIn(true);
-                navigate("/dashboard");
+                navigate("/dash");
                 localStorage.setItem("auth", true);
               }
             }
@@ -126,7 +128,6 @@ function Auth() {
           <img className="w-full h-full" src={pakka} alt="/" />
         </div>
         <div className="p-4 flex flex-col justify-around">
-          {/* <form onSubmit={handleEdit}> */}
           <form onSubmit={logInForm}>
             <h2 className="text-4xl font-bold text-center mb-9 text-gray-600">
               INC
@@ -135,28 +136,30 @@ function Auth() {
               <input
                 className="border p-2 mr-2 mb-4 w-80 ml-2"
                 type="text"
-                placeholder="Enter Your Email"
-                ref={emailInputRef}
-                //id="Train_name"
-                //name="Train_name"
-                //value={inputs.Train_name || ""}
-                // onChange={(event) =>
-                //   setInputs({ ...inputs, Train_name: event.target.value })
-                // }
+                placeholder="Enter Your Name"
+                ref={userName}
               />
-              <h5 style={{ color: "red" }}>{message}</h5>
+              <input
+                className="border p-2 mr-2 mb-4 w-80 ml-2"
+                type="text"
+                placeholder="Enter Your Age"
+                ref={userAge}
+              />
+              <input
+                className="border p-2 mr-2 mb-4 w-80 ml-2"
+                type="text"
+                placeholder="Your Email Address"
+                ref={emailInputRef}
+              />
+              <h5 className="text-red-600">{message}</h5>
             </div>
             <div>
               <input
                 className="border p-2 mb-4 w-80 ml-2"
                 type="password"
-                placeholder="Password"
+                placeholder="Enter Password"
                 value={passwordInputRef}
                 onChange={handlePasswordChange}
-                // value={inputs.Description || ""}
-                // onChange={(event) =>
-                //   setInputs({ ...inputs, Description: event.target.value })
-                // }
               />
               {passwordInputRef !== "" ? (
                 <PasswordChecklist
@@ -173,15 +176,12 @@ function Auth() {
               ) : (
                 ""
               )}
-              <h5 style={{ color: "red" }}>{password}</h5>
+              <h5 className="text-red-600">{password}</h5>
             </div>
-            <button
-              //onClick={logInForm}
-              className="w-full py-2 my-4 bg-green-600 hover:bg-yellow-500 mt-7"
-            >
-              Login
+            <button className="w-full py-2 my-4 bg-green-600 hover:bg-yellow-500 mt-7">
+              Sign In
             </button>
-            <h5 style={{ color: "red" }}>{error}</h5>
+            <h5 className="text-red-600">{error}</h5>
           </form>
         </div>
       </div>
