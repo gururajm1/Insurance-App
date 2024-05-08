@@ -8,9 +8,9 @@ function Cardroot() {
   const navigate = useNavigate();
   const location = useLocation();
   const data = location.state.data;
-  const premium_annually = data.premium_annually;
-  const premium_monthly = data.premium_monthly;
-  const premium_quarterly = "₹2500";
+  // const premium_annually = data.premium_annually;
+  // const premium_monthly = data.premium_monthly;
+  //const premium_quarterly = "₹2500";
 
   useEffect(() => {
     if (!localStorage.getItem("auth")) {
@@ -25,11 +25,11 @@ function Cardroot() {
   };
 
   return (
-    <div>
-      <div className="flex justify-center gap-16 mt-32">
-        <PaymentCard1 premiumMonthly={premium_monthly} />
-        <PaymentCard2 premiumQuaterly={premium_quarterly} />
-        <PaymentCard3 premiumAnnually={premium_annually} />
+    <div className="container mx-auto px-4">
+      <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-8 mt-8 md:mt-32">
+        <PaymentCard1 data={data} />
+        <PaymentCard2 data={data} />
+        <PaymentCard3 data={data} />
       </div>
     </div>
   );

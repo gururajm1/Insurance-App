@@ -7,7 +7,6 @@ function Insdetails() {
     console.log(data);
     
     const handlePlanClick = (plan) => {
-
       navigate('/payment-options', {
         state: { data },
         replace: false,
