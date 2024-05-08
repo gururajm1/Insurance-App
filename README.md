@@ -1,6 +1,6 @@
 # For Installing Node Modules Below Command
 ## `npm install --legacy-peer-deps`
-Since There are Lots of dependencies are There normal npm i wount work it might show ERR
+Since There are Lots of dependencies are There normal npm i wouldn't work it might show ERR
 
 # Getting Started with Create React App
 
