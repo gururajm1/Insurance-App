@@ -1,3 +1,7 @@
+#For Installing Node Modules Below Command
+## `npm install --legacy-peer-deps`
+Since There are Lots of dependencies are There normal npm i wount work it might show ERR
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
