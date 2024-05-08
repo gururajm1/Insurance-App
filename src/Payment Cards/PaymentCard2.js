@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 function PaymentCard2({data}) {
   const navigate = useNavigate();
-  // const premiumAmount = data.premium_quaterly;
-  // data.premiumAmount = premiumAmount; 
 
    const handleClickPlan2 = () => {
       navigate(`/payment-gateway`, {
@@ -21,7 +19,6 @@ function PaymentCard2({data}) {
           Best Seller plan
         </h5>
         <div className="flex items-baseline text-gray-900 dark:text-white">
-          {/* <span className="text-3xl font-semibold">₹</span> */}
           <span className="text-5xl font-extrabold tracking-tight">₹2500</span>
           <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">
             /quater

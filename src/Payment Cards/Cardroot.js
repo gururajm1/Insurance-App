@@ -8,9 +8,6 @@ function Cardroot() {
   const navigate = useNavigate();
   const location = useLocation();
   const data = location.state.data;
-  // const premium_annually = data.premium_annually;
-  // const premium_monthly = data.premium_monthly;
-  //const premium_quarterly = "₹2500";
 
   useEffect(() => {
     if (!localStorage.getItem("auth")) {

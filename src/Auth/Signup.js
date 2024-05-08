@@ -1,4 +1,3 @@
-// Signup.jsx
 import React, { useState, useRef, useEffect } from "react";
 import bcrypt from "bcryptjs";
 import { useNavigate } from "react-router-dom";

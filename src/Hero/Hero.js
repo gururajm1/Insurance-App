@@ -2,14 +2,15 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import homerootBanner from "../assets/homerootBanner.jpg";
-import { ArrowForward } from "@mui/icons-material"; // Import an arrow icon for buttons
+import { ArrowForward } from "@mui/icons-material";
 
 const Hero = () => {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate("/sign-up")
-  }
+    navigate("/sign-up");
+  };
+
   return (
     <section className="hero relative mb-0">
       <div className="mt-8 pb-10">
@@ -21,15 +22,15 @@ const Hero = () => {
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <div className="container text-center">
-          <h1 className="text-5xl text-zinc-800 font-bold mb-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl text-zinc-800 font-bold mb-4">
             Compare & Buy Insurance Policies Online
           </h1>
-          <p className="text-lg mb-8">
+          <p className="text-lg md:text-xl lg:text-2xl mb-8">
             Get the best insurance plans tailored to your needs with Inc Ltd.
           </p>
           <button
             onClick={handleGetStarted}
-            className="p-3 px-5 bg-blue-400 rounded-2xl"
+            className="p-3 px-5 md:p-4 md:px-6 bg-blue-400 rounded-2xl text-white text-base md:text-lg lg:text-xl"
           >
             Get Started
           </button>

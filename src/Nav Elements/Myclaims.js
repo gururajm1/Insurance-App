@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useClaimContext } from "./ClaimContext";
 import DoneIcon from "@mui/icons-material/Done";
+import {useNavigate} from 'react-router-dom'
 
 function Myclaims() {
+  const navigate = useNavigate();
   const { claimData } = useClaimContext();
+
+  useEffect(() => {
+    if(!localStorage.getItem("auth")){
+      navigate("/");
+    }
+  }, []);
 
   return (
     <div>
@@ -32,7 +40,7 @@ function Myclaims() {
           </div>
         </div>
       ) : (
-        <p className="text-red-500 font-bold">No claim details available.</p>
+        <h1 className="text-red-500 font-bold flex justify-center mt-5">No claim details available.</h1>
       )}
     </div>
   );

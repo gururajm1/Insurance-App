@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import DoneIcon from "@mui/icons-material/Done";
-import { useClaimContext } from "./ClaimContext"; // Importing the context
+import { useClaimContext } from "./ClaimContext"; 
 
 function Myinsurances() {
   const navigate = useNavigate();
-  const { setClaim } = useClaimContext(); // Accessing claim context
+  useEffect(() => {
+    if (!localStorage.getItem("auth")) {
+      navigate("/");
+    }
+  }, []);
+  const { setClaim } = useClaimContext(); 
   const [myPolicies, setMyPolicies] = useState([]);
   const [claim, setClaimMessage] = useState("");
   const [isClicked, setIsClicked] = useState(false);
@@ -14,7 +19,7 @@ function Myinsurances() {
   const handleClaim = (policy) => {
     setBtn("Claimed");
     setIsClicked(true);
-    setClaim(policy); // Setting claim data to context
+    setClaim(policy); 
     setClaimMessage(
       "You have sent a claim request. Check My Claims and wait for confirmation."
     );
@@ -75,7 +80,7 @@ function Myinsurances() {
               </div>
             </div>
             <button
-              onClick={() => handleClaim(policy)} // Pass policy to handleClaim
+              onClick={() => handleClaim(policy)} 
               disabled={isClicked}
               className="p-4 bg-green-500 rounded-2xl"
             >
@@ -84,7 +89,7 @@ function Myinsurances() {
           </div>
         ))
       ) : (
-        <p>You haven't Purchased Any</p>
+        <h1 className="text-red-500 font-bold flex justify-center mt-5">You haven't Purchased Any Purchase to See</h1>
       )}
       <h4 className={`p-4 font-bold rounded-2xl ml-80 text-green-500`}>
         {claim}

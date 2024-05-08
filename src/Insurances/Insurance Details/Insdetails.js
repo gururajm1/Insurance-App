@@ -1,28 +1,36 @@
-import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import InsDetailsBanner from "../Incassets/InsDetailsBanner.jpg"; // Import your background image
+
 function Insdetails() {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const data = location.state.plan;
-    console.log(data);
-    
-    const handlePlanClick = (plan) => {
-      navigate('/payment-options', {
-        state: { data },
-        replace: false,
-      });
-    };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const data = location.state.plan;
+
+  const handlePlanClick = () => {
+    navigate("/payment-options", {
+      state: { data },
+      replace: false,
+    });
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div
+      className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+      style={{
+        backgroundImage: `url(${InsDetailsBanner})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-md w-full space-y-8 bg-white bg-opacity-90 p-6 rounded-lg shadow-md ml-36">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Insurance Plan Details
           </h2>
         </div>
         <div className="rounded-md shadow-sm -space-y-px">
-          <div className="py-4 px-4 bg-white">
+          <div className="py-4 px-4">
             <h3 className="text-lg font-medium text-gray-900">
               {data.plan_name}
             </h3>
@@ -53,9 +61,9 @@ function Insdetails() {
                   </li>
                 ))}
               </ul>
-              <span>
+              <span className="block sm:inline-block">
                 <button
-                  className="p-3 bg-green-500 rounded-xl"
+                  className="w-full sm:w-auto p-3 bg-green-500 rounded-xl mt-5"
                   onClick={handlePlanClick}
                 >
                   Proceed to Payment
@@ -69,4 +77,4 @@ function Insdetails() {
   );
 }
 
-export default Insdetails
+export default Insdetails;

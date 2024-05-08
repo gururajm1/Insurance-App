@@ -21,7 +21,6 @@ function PaymentCard1({data}) {
           Standard plan
         </h5>
         <div className="flex items-baseline text-gray-900 dark:text-white">
-          {/* //<span className="text-3xl font-semibold">₹</span> */}
           <span className="text-5xl font-extrabold tracking-tight">
             {premiumAmount}
           </span>

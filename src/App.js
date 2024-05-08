@@ -14,7 +14,7 @@ import Login from "./Auth/Login";
 import Paymentgateway from "./Paymentgateway";
 import Myinsurances from "./Nav Elements/Myinsurances";
 import Myclaims from "./Nav Elements/Myclaims";
-import { ClaimProvider } from "./Nav Elements/ClaimContext"; // Importing the ClaimProvider context
+import { ClaimProvider } from "./Nav Elements/ClaimContext";
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Paymentgateway() {
@@ -15,13 +15,17 @@ function Paymentgateway() {
   };
 
   const handlePayment = (plan) => {
-    // Save data to local storage
-    //localStorage.setItem("paymentData", JSON.stringify(data));
     navigate(`/my-policies`, {
       state: { data },
       replace: false,
     });
   };
+
+  useEffect(() => {
+    if (!localStorage.getItem("auth")) {
+      navigate("/");
+    }
+  }, []);
 
 
   return (
