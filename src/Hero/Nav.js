@@ -26,6 +26,10 @@ function Nav() {
     navigate("/my-policies");
   }
 
+  const handleMyClaimsClick = () => {
+    navigate("/my-claims");
+  };
+
   return (
     <div>
       <div className="fixed top-0 left-0 w-full flex flex-col sm:flex-row justify-around bg-white pt-3 pb-3">
@@ -40,7 +44,9 @@ function Nav() {
         className="block sm:inline-block mt-2 sm:mt-0 underline cursor-pointer text-purple-700 hover:text-purple-900">
           My Policies
         </span>
-        <span className="block sm:inline-block mt-2 sm:mt-0 underline cursor-pointer text-purple-700 hover:text-purple-900">
+        <span 
+        onClick={handleMyClaimsClick}
+        className="block sm:inline-block mt-2 sm:mt-0 underline cursor-pointer text-purple-700 hover:text-purple-900">
           My Claims
         </span>
         <span
