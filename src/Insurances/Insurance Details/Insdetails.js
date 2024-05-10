@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import InsDetailsBanner from "../Incassets/InsDetailsBanner.jpg"; // Import your background image
+import InsDetailsBanner from "../Incassets/InsDetailsBanner.jpg"; 
 
 function Insdetails() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ function Insdetails() {
         backgroundPosition: "center",
       }}
     >
-      <div className="max-w-md w-full space-y-8 bg-white bg-opacity-90 p-6 rounded-lg shadow-md ml-36">
+      <div className="mr-24 p-10 md:max-w-md w-full space-y-8 bg-white bg-opacity-90 md:p-6 rounded-lg shadow-md ml-36">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Insurance Plan Details

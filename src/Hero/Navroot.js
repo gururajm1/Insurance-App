@@ -13,22 +13,22 @@ function Navroot() {
 
   return (
     <div className="pb-2">
-      <div className="fixed top-0 left-0 w-full flex flex-col lg:flex-row justify-around bg-white pt-3 pb-3">
-        <span className="underline cursor-pointer text-purple-700 mb-2 lg:mb-0">
+      <div className="fixed z-50 top-0 left-0 w-full flex flex-col sm:flex-row justify-around bg-slate-100 pt-3 pb-3">
+        <span className="block sm:inline mt-2 sm:mt-0 underline cursor-pointer text-purple-700 hover:text-purple-900">
           About
         </span>
-        <span className="underline cursor-pointer text-purple-700 mb-2 lg:mb-0">
+        <span className="block sm:inline mt-2 sm:mt-0 underline cursor-pointer text-purple-700 hover:text-purple-900">
           Careers
         </span>
         <span
           onClick={handleSignup}
-          className="underline cursor-pointer text-purple-700 mb-2 lg:mb-0"
+          className="block sm:inline mt-2 sm:mt-0 underline cursor-pointer text-purple-700 hover:text-purple-900"
         >
           Sign-up
         </span>
         <span
           onClick={handleLogin}
-          className="underline cursor-pointer text-purple-700 mb-2 lg:mb-0"
+          className="block sm:inline mt-2 sm:mt-0 underline cursor-pointer text-purple-700 hover:text-purple-900"
         >
           Login
         </span>

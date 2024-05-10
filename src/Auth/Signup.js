@@ -11,7 +11,7 @@ function Signup() {
     if(localStorage.getItem("auth")){
       navigate("/dash");
     }else if(localStorage.getItem("login")){
-        setError("Already Have an Account Try Login");
+      setError("You already have an account try Logging in")
     }
   }, []);
 
@@ -60,7 +60,7 @@ function Signup() {
   };
 
   return (
-    <div className="w-full h-screen flex">
+    <div className="md:w-full h-screen flex ml-[-25px]">
       <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[550px] shadow-lg shadow-black-200 sm:max-w-[900px]">
         <div className="w-full h-[550px] hidden md:block">
           <img className="w-full h-full" src={pakka} alt="/" />
@@ -117,7 +117,7 @@ function Signup() {
             <button className="w-[350px] ml-6 p-2 my-4 bg-green-600 hover:bg-yellow-500 mt-7">
               Sign Up
             </button>
-            <h5 className="text-red-600">{error}</h5>
+            <h5 className="text-red-600 flex justify-center">{error}</h5>
           </form>
         </div>
       </div>

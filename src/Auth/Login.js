@@ -34,14 +34,14 @@ function Login() {
     }
     const { hashedpassword } = storedData;
     if (email !== storedData.email) {
-      setError("Email doesn't match");
+      setError("Check Your Credentials");
       return;
     }
     bcrypt.compare(password, hashedpassword, function (err, isMatch) {
       if (err) {
         throw err;
       } else if (!isMatch) {
-        setError("Password doesn't match");
+        setError("Check your password");
       } else {
         setError("");
         setPassword("");
@@ -102,7 +102,7 @@ function Login() {
             >
               Log In
             </button>
-            <h5 className="text-red-600">{error}</h5>
+            <h5 className="text-red-600 flex justify-center">{error}</h5>
           </form>
         </div>
       </div>

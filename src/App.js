@@ -14,13 +14,10 @@ import Login from "./Auth/Login";
 import Paymentgateway from "./Paymentgateway";
 import Myinsurances from "./Nav Elements/Myinsurances";
 import Myclaims from "./Nav Elements/Myclaims";
-import { ClaimProvider } from "./Nav Elements/ClaimContext";
 
 function App() {
   return (
     <Router>
-      <ClaimProvider>
-        <div className="App">
           <Routes>
             <Route path="/" element={<Heroroot />} />
             <Route path="/sign-up" element={<Signup />} />
@@ -36,8 +33,6 @@ function App() {
             <Route path="/plan-details/:id" element={<Insdetails />} />
             <Route path="/payment-options" element={<Cardroot />} />
           </Routes>
-        </div>
-      </ClaimProvider>
     </Router>
   );
 }

@@ -15,16 +15,17 @@ const Hero = () => {
     <section className="hero relative mb-0">
       <div className="mt-8 pb-10">
         <img
-          className="max-h-[705px] w-full object-cover"
+          className="mt-32 md:max-h-[705px] w-full object-cover lg:max-h-[705px]"
           src={homerootBanner}
           alt="homerootBanner"
         />
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <div className="container text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl text-zinc-800 font-bold mb-4">
+          <h1 className="hidden md:text-6xl lg:text-7xl text-zinc-800 font-bold mb-4 md:block lg:block text-5xl">
             Compare & Buy Insurance Policies Online
           </h1>
+
           <p className="text-lg md:text-xl lg:text-2xl mb-8">
             Get the best insurance plans tailored to your needs with Inc Ltd.
           </p>

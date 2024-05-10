@@ -8,6 +8,8 @@ import Nav from "./Hero/Nav";
 
 function Dashboard() {
   const navigate = useNavigate();
+  const loginData = JSON.parse(localStorage.getItem("login"));
+  const userName = loginData.name;
 
   useEffect(() => {
     if (!localStorage.getItem("auth")) {
@@ -24,9 +26,9 @@ function Dashboard() {
   return (
     <div>
       <Nav />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-400">
+      <div className="mt-7 pl-3 pb-3 md:flex flex-col items-center justify-center min-h-screen bg-slate-400">
         <h1 className="text-4xl font-bold mb-8 text-center">
-          Welcome, Purchase Your First Insurance Today
+          Welcome {userName}, Purchase Your Insurance Today
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <InsuranceCard
