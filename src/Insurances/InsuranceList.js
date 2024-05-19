@@ -49,8 +49,8 @@ function InsuranceList({ apiUrl, bannerImage, InsuranceName }) {
 
   return (
     <div>
-      <div className="mt-8 pb-10">
-        <h1 className="mt-60 font-bold text-xl md:font-bold text-black md:text-4xl absolute md:mt-[630px] ml-7">
+      <div className="mt-14 pb-10">
+        <h1 className="mt-6 font-bold text-xl md:text-4xl text-center text-black">
           {InsuranceName} INSURANCE
         </h1>
         <img className="max-h-[705px] w-full" src={bannerImage} alt="banner" />

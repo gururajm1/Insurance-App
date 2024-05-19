@@ -15,7 +15,7 @@ const Hero = () => {
     <section className="hero relative mb-0">
       <div className="mt-8 pb-10">
         <img
-          className="mt-32 md:max-h-[705px] w-full object-cover lg:max-h-[705px]"
+          className="mt-8 md:max-h-[705px] w-full object-cover lg:max-h-[705px]"
           src={homerootBanner}
           alt="homerootBanner"
         />
