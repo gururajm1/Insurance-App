@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import InsDetailsBanner from "../Incassets/InsDetailsBanner.jpg"; 
+import InsDetailsBanner from "../Incassets/InsDetailsBanner.jpg";
+import Nav from "../Nav";
 
 function Insdetails() {
   const navigate = useNavigate();
@@ -15,21 +16,20 @@ function Insdetails() {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
-      style={{
-        backgroundImage: `url(${InsDetailsBanner})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="mr-24 p-10 md:max-w-md w-full space-y-8 bg-white bg-opacity-90 md:p-6 rounded-lg shadow-md ml-36">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+    <div>
+      <Nav />
+      <div
+        className="min-h-screen flex flex-col justify-center items-center bg-gray-50"
+        style={{
+          backgroundImage: `url(${InsDetailsBanner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="w-full max-w-96 md:max-w-md p-6 md:p-8 rounded-lg shadow-md bg-white bg-opacity-90">
+          <h2 className="text-3xl font-extrabold text-gray-900 text-center">
             Insurance Plan Details
           </h2>
-        </div>
-        <div className="rounded-md shadow-sm -space-y-px">
           <div className="py-4 px-4">
             <h3 className="text-lg font-medium text-gray-900">
               {data.plan_name}

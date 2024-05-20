@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import DoneIcon from "@mui/icons-material/Done";
+import { Button } from "@mui/material";
 
 function Myinsurances() {
   const [claimMessage, setClaimMessage] = useState("");
-  const [isClicked, setIsClicked] = useState({}); 
+  const [isClicked, setIsClicked] = useState({});
   const [claim, setClaim] = useState("");
-
   const navigate = useNavigate();
   const [myPolicies, setMyPolicies] = useState([]);
 
@@ -18,7 +18,7 @@ function Myinsurances() {
 
   useEffect(() => {
     const storedPolicies =
-    JSON.parse(localStorage.getItem("my-purchases")) || [];
+      JSON.parse(localStorage.getItem("my-purchases")) || [];
     setMyPolicies(storedPolicies);
 
     const storedIsClicked = JSON.parse(localStorage.getItem("isClicked")) || {};
@@ -61,46 +61,59 @@ function Myinsurances() {
           You haven't Purchased Any Policies to See
         </h1>
       )}
-      <h4 className={`text-sm md:p-4 font-bold md:text-2xl flex justify-center text-green-500`}>
+      <h4
+        className={`text-sm md:p-4 font-bold md:text-2xl flex justify-center text-green-500`}
+      >
         {claim}
       </h4>
       {myPolicies.length > 0
         ? myPolicies.map((policy) => (
             <div key={policy?.id} className="my-4 flex justify-center">
-              {policy && (
-                <div className="cursor-pointer items-start justify-between bg-white p-6 rounded-lg shadow-md pb-2 w-full lg:max-w-[1000px] flex flex-col lg:flex-row gap-4">
-                  <div className="flex flex-col w-full lg:w-auto">
-                    <h3>{policy?.plan_name}</h3>
-                    <p>Provider: {policy?.provider}</p>
-                    <p>Cover Amount: {policy?.cover_amount}</p>
-                    <p>Cashless Garages: {policy?.cashless_garages}</p>
-                    <p>Premium Monthly: {policy?.premium_monthly}</p>
-                    <p>Premium Annually: {policy?.premium_annually}</p>
-                    <p>Claim Percentage: {policy?.claim_percentage}</p>
+              {policy && (  
+                <div className="w-full rounded-lg border border-gray-200 bg-white shadow-md transition-all hover:border-gray-300 cursor-pointer mx-8">
+                  <div className="p-6">
+                    <h3 className="text-2xl font-semibold">
+                      {policy?.plan_name}
+                    </h3>
+                    <div className="mt-4 flex flex-col gap-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500">Provider</span>
+                        <span className="font-medium">{policy?.provider}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500">
+                          Cover Amount
+                        </span>
+                        <span className="font-medium">
+                          {policy?.cover_amount}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500">
+                          Cashless Garages
+                        </span>
+                        <span className="font-medium">
+                          {policy?.cashless_garages}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500">
+                          Claim Percentage
+                        </span>
+                        <span className="font-medium">
+                          {policy?.claim_percentage}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="items-end flex flex-col pl-36">
-                    <ul>
-                      {policy?.features.map((feature, index) => (
-                        <li key={index}>
-                          <DoneIcon className="text-green-600" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="border-t border-gray-200 bg-gray-100 p-4 flex justify-center text-green-400">
+                    {isClicked[policy.plan_name] || policy.isClaimed ? (
+                      <button disabled className="text-gray-400">CLAIMED</button>
+                    ) : (
+                      <button className="font-bold" onClick={() => handleClaim(policy)}>CLAIM</button>
+                    )}
                   </div>
                 </div>
-              )}
-              {isClicked[policy.plan_name] || policy.isClaimed ? (
-                <button disabled className="p-4 bg-gray-500 rounded-2xl">
-                  Claimed
-                </button>
-              ) : (
-                <button
-                  onClick={() => handleClaim(policy)}
-                  className="p-4 bg-green-500 rounded-2xl"
-                >
-                  Claim
-                </button>
               )}
             </div>
           ))
