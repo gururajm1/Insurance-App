@@ -52,7 +52,6 @@ export default function Insdetails() {
   useEffect(() => {
     if(!localStorage.getItem("auth")){
       navigate("/");
-      return;
     }else{
       window.scrollTo(0, 0);
     }

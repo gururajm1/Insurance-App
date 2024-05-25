@@ -9,7 +9,7 @@ import { useEffect } from "react";
 export default function Dashboard() {
   const navigate = useNavigate();
   const loginData = JSON.parse(localStorage.getItem("login"));
-  const userName = loginData.name;
+  let userName = null;
 
   useEffect(() => {
     if (!localStorage.getItem("auth")) {
@@ -17,11 +17,16 @@ export default function Dashboard() {
     }
   }, []);
 
+  if (loginData && loginData.name) {
+    userName = loginData.name;
+  }
+
   const handleInsuranceClick = (path) => {
     if (localStorage.getItem("auth")) {
       navigate(path);
     }
   };
+
   return (
     <div>
       <Nav />
