@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <div className="container text-center">
-          <h1 className="hidden md:text-6xl lg:text-7xl text-zinc-800 font-bold mb-4 md:block lg:block text-5xl">
+          <h1 className="hidden md:text-6xl lg:text-7xl text-zinc-800 font-light mb-4 md:block lg:block text-5xl">
             Compare & Buy Insurance Policies Online
           </h1>
 

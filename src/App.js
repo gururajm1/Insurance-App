@@ -14,25 +14,30 @@ import Login from "./Auth/Login";
 import Paymentgateway from "./Paymentgateway";
 import Myinsurances from "./Nav Elements/Myinsurances";
 import Myclaims from "./Nav Elements/Myclaims";
+import { Analytics } from "@vercel/analytics/react"; 
 
 function App() {
   return (
     <Router>
-          <Routes>
-            <Route path="/" element={<Heroroot />} />
-            <Route path="/sign-up" element={<Signup />} />
-            <Route path="/my-claims" element={<Myclaims />} />
-            <Route path="/payment-gateway" element={<Paymentgateway />} />
-            <Route path="/my-policies" element={<Myinsurances />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/health" element={<Health />} />
-            <Route path="/travel" element={<Travel />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/auto" element={<Auto />} />
-            <Route path="/dash" element={<Dashboard />} />
-            <Route path="/plan-details/:id" element={<Insdetails />} />
-            <Route path="/payment-options" element={<Cardroot />} />
-          </Routes>
+      <div>
+        {/* Add Analytics component */}
+        <Analytics />
+        <Routes>
+          <Route path="/" element={<Heroroot />} />
+          <Route path="/sign-up" element={<Signup />} />
+          <Route path="/my-claims" element={<Myclaims />} />
+          <Route path="/payment-gateway" element={<Paymentgateway />} />
+          <Route path="/my-policies" element={<Myinsurances />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/travel" element={<Travel />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/auto" element={<Auto />} />
+          <Route path="/dash" element={<Dashboard />} />
+          <Route path="/plan-details/:id" element={<Insdetails />} />
+          <Route path="/payment-options" element={<Cardroot />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
