@@ -1,3 +1,9 @@
+https://github.com/gururajm1/Insurance-App/assets/107309944/1159ef68-e334-4199-bb5f-7722f53254b8
+
+![Screenshot (621)](https://github.com/gururajm1/Insurance-App/assets/107309944/a6dbc362-0a9e-48af-8477-8418c76647ae)
+
+![Screenshot (620)](https://github.com/gururajm1/Insurance-App/assets/107309944/dd1f9cc6-04ac-4390-a958-4f31aef32faf)
+
 # For Installing Node Modules Below Command
 ## `npm install --legacy-peer-deps`
 Since There are Lots of dependencies are There normal npm i wouldn't work it might show ERR
@@ -48,26 +54,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `npm run build` fails to minify
 
